@@ -1,10 +1,10 @@
 import React from 'react'
 import Skeleton from 'react-loading-skeleton'
-import { Anchor, Image } from './styles'
+import { Link, Image } from './styles'
 
 const DEFAULT_IMAGE = 'https://i.imgur.com/dJa0Hpl.jpg'
 
-export const Category = ({ cover = DEFAULT_IMAGE, path, emoji = '?', loading }) => {
+export const Category = ({ cover = DEFAULT_IMAGE, path = '#', emoji = '?', loading }) => {
   if (loading) {
     return (
       <>
@@ -17,9 +17,9 @@ export const Category = ({ cover = DEFAULT_IMAGE, path, emoji = '?', loading }) 
   }
 
   return (
-    <Anchor href={path}>
+    <Link to={path}>
       <Image src={cover} />
       {emoji}
-    </Anchor>
+    </Link>
   )
 }
