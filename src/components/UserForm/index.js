@@ -9,10 +9,7 @@ export const UserForm = ({ error, disabled, onSubmit, title }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    onSubmit({
-      email: email.value,
-      password: password.value
-    })
+    onSubmit(email.value, password.value)
   }
 
   return (
@@ -21,7 +18,7 @@ export const UserForm = ({ error, disabled, onSubmit, title }) => {
         <Title>{title}</Title>
         <Input disabled={disabled} placeholder='Email' {...email} />
         <Input disabled={disabled} placeholder='Password' type='password' {...password} />
-        <button>Iniciar sesión</button>
+        <button>{title}</button>
       </Form>
       {error && <Error>{error}</Error>}
     </>
