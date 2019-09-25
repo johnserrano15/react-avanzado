@@ -10,8 +10,8 @@ export const ListOfPhotoCards = ({ categoryId }) => {
   if (loading) {
     return (
       <ul>
-        {[1, 2, 3].map(id => (
-          <PhotoCard key={id} loading />
+        {[{ id: '0', liked: false, src: '#', likes: 0 }].map(item => (
+          <PhotoCard key={item.id} loading {...item} />
         ))}
       </ul>
     )
